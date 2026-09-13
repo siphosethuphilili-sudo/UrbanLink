@@ -4,97 +4,90 @@ A centralized web-based municipal services management system for Mbombela Munici
 
 ## Overview
 
-UrbanLink lets residents report issues, routes requests to the correct department, tracks progress, sends automatic updates, and records every action for accountability. One platform for residents, staff, and managers.
+UrbanLink lets residents report issues, routes requests to the correct department, tracks progress, sends automatic updates, and records every action for accountability.
 
 ## Features
 
-- **Issue Reporting**: Residents can easily report municipal issues
-- **Intelligent Routing**: Automatically routes requests to the correct department
-- **Progress Tracking**: Real-time tracking of issue resolution progress
-- **Automatic Updates**: Residents receive automatic status updates
-- **Full Accountability**: Complete audit trail of all actions
+- **Issue Reporting**: Report municipal issues easily
+- **Intelligent Routing**: Requests routed to correct departments
+- **Progress Tracking**: Real-time issue tracking
+- **Automatic Updates**: Status notifications
+- **Full Accountability**: Complete audit trail
 
 ## Getting Started
 
 ### Prerequisites
-
-- Node.js 18+ or 20+
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
-1. Clone the repository
 ```bash
 git clone https://github.com/siphosethuphilili-sudo/UrbanLink.git
 cd UrbanLink
-```
-
-2. Install dependencies
-```bash
 npm install
+cp .env.example .env.local
 ```
 
-3. Configure environment variables
-Create a `.env.local` file with your Firebase credentials:
-```bash
-VITE_FIREBASE_API_KEY=your_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+### Configuration
+
+Edit `.env.local` with your Firebase credentials:
+```
+VITE_FIREBASE_API_KEY=your_key
+VITE_FIREBASE_AUTH_DOMAIN=your_domain
+VITE_FIREBASE_PROJECT_ID=your_project
+VITE_FIREBASE_STORAGE_BUCKET=your_bucket
 VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 VITE_FIREBASE_APP_ID=your_app_id
 ```
 
 ### Development
 
-Start the development server:
 ```bash
 npm run dev
 ```
 
-### Building
+### Build
 
-Build for production:
 ```bash
 npm run build
 ```
 
-### Linting and Type Checking
+### Commands
 
-Run linting:
-```bash
-npm run lint
-```
-
-Run type checks:
-```bash
-npm run typecheck
-```
-
-### Database Seeding
-
-To seed the database with sample data:
-```bash
-npm run seed
-```
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run linter
+- `npm run typecheck` - Type checking
 
 ## Project Structure
 
-- `src/`: Frontend application source
-- `src/api/base44Client.js`: Firebase client configuration
-- `vite.config.js`: Vite configuration
-- `.env.local`: Local environment variables (never commit)
+```
+src/
+├── components/       # Components
+├── pages/           # Page components
+├── context/         # Context providers
+├── App.jsx          # Main component
+├── main.jsx         # Entry point
+└── index.css        # Styles
+```
 
 ## Technology Stack
 
-- **Frontend**: JavaScript/TypeScript, Vite
-- **Backend**: Firebase (Firestore + Authentication)
-- **Deployment**: GitHub Pages
+- React 18
+- React Router
+- Firebase
+- Vite
+- Tailwind CSS
+- TypeScript
+
+## Deployment
+
+Deployed to GitHub Pages via GitHub Actions.
+
+**Live URL**: https://siphosethuphilili-sudo.github.io/UrbanLink/
 
 ## License
 
-See LICENSE file for details.
-
-## Support
-
-For issues and feature requests, please create an issue on GitHub.
+MIT
